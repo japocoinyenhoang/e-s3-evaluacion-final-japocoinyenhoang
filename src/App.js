@@ -6,19 +6,41 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
+      query: '',
       characters: []
 
     }
-
+    this.handleSearch=this.handleSearch.bind(this);
   }
-
-
-
-  componentDidMount(){
+  componentWillMount(){
     this.getApiCharacters();
-
   }
- 
+
+
+  handleSearch(e){
+    const toSearch = e.currentTarget.value;
+    this.setState({
+      query: toSearch
+    })
+  }
+
+  searchFilter(){
+   const searchFiltered= this.state.characters.filter(item=>{
+     const characterName=item.name;
+     console.log(characterName);
+     if (characterName.includes(this.state.query)){
+        return true;
+     }else{ 
+       return false;
+       }
+     });
+     return searchFiltered;
+}
+
+   
+      
+      
+
 
    getApiCharacters(){
     fetchApi()
@@ -36,11 +58,17 @@ class App extends Component {
     
   }
   render() {
+    const filteredCharacters=this.searchFilter();
     return (
       <div className="app">
-      <h1 className="app__title">Harry Potter Characters</h1>
+       <header className="app__header">
+          <h1 className="app__title">Harry Potter Characters</h1>
+          <div className="app__search">
+            <input type="text" className= "app__search--input" onKeyUp={this.handleSearch} placeholder="Search your favorito Harry Potter Character"></input>
+          </div>
+        </header>
       <ul className="app__list">
-        {this.state.characters.map(item=>{
+        {filteredCharacters.map(item=>{
           console.log(item)
           return(
             <li className="app__list__character" id={item.id} key={item.id}>
