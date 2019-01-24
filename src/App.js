@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {fetchApi} from './services/CharacterService';
+import {Route, Switch} from 'react-router-dom';
 import Filter from './components/Filter';
 import './App.css';
 import CharacterList from './components/CharacterList';
@@ -65,11 +66,15 @@ class App extends Component {
       <div className="app">
        <header className="app__header">
           <h1 className="app__title">Harry Potter Characters</h1>
-          <Filter action={this.handleSearch} />
+          <Switch>
+              <Route exact path="/" render={()=><Filter action={this.handleSearch}/>} />
+          </Switch>
         </header>
         <main className="app__main">
-        <CharacterDetails details={characters} characterId={2}/>
-        <CharacterList filteredCharacters={filteredCharacters} />
+        <Switch>
+              <Route exact path="/" render={()=><CharacterList filteredCharacters={filteredCharacters} />} />
+              <Route exact path="/Characters/:id" render={props=><CharacterDetails  match={props.match} details={characters} characterId={2}/>} />
+        </Switch>
        </main>
       </div>
     );
