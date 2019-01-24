@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {fetchApi} from './services/CharacterService';
 import './App.css';
 
 class App extends Component {
@@ -14,10 +15,7 @@ class App extends Component {
     this.getCharacters();
   }
   getCharacters(){
-    const ENDPOIND='http://hp-api.herokuapp.com/api/characters/?results=25'
-
-    fetch(ENDPOIND)
-    .then (response=>response.json())
+    fetchApi()
     .then(data=>{
       console.log (data)
     })
