@@ -8,17 +8,25 @@ class App extends Component {
     this.state={
       characters: []
     }
-
-
   }
+
+
   componentDidMount(){
-    this.getCharacters();
+    this.getApiCharacters();
   }
-  getCharacters(){
+ 
+
+   getApiCharacters(){
     fetchApi()
     .then(data=>{
-      console.log (data)
+      const newData=data.map((item, index)=>{
+        return {...item, id:index};
+      });
+      this.setState({
+        characters: newData
+      })
     })
+    
   }
   render() {
     return (
