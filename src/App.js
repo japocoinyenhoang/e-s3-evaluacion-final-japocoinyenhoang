@@ -33,7 +33,7 @@ class App extends Component {
    const searchFiltered= this.state.characters.filter(item=>{
      const characterName=item.name;
      console.log(characterName);
-     if (characterName.includes(this.state.query)){
+     if (characterName.toUpperCase().includes(this.state.query.toUpperCase())){
         return true;
      }else{ 
        return false;
