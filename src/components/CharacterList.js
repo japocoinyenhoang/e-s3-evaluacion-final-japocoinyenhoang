@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import{Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ListItem from './ListItem';
+import CharacterCard from './CharacterCard';
 
 
 class CharacterList extends Component {
@@ -14,7 +14,7 @@ class CharacterList extends Component {
           return(
             <li className="app__list__character" id={item.id} key={item.id}>
             <Link to={`character/${item.id}`} className="link link__details">
-              <ListItem 
+              <CharacterCard 
                 id={item.id} 
                 name={item.name}
                 image={item.image}

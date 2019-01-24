@@ -21,7 +21,7 @@ class CharacterDetails extends Component {
         </li>
         </div>
         <div className="link__container">
-        <Link to="/" className="link link__return" />Return to Home
+        <Link to="/" className="link link__return" />Return 
         </div>
         </React.Fragment>
     );}

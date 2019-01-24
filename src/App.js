@@ -73,7 +73,7 @@ class App extends Component {
         <main className="app__main">
         <Switch>
               <Route exact path="/" render={()=><CharacterList filteredCharacters={filteredCharacters} />} />
-              <Route exact path="/Characters/:id" render={props=><CharacterDetails  match={props.match} details={characters} characterId={2}/>} />
+              <Route exact path="/details/:id" render={props=><CharacterDetails  match={props.match} details={characters} characterId={2}/>} />
         </Switch>
        </main>
       </div>

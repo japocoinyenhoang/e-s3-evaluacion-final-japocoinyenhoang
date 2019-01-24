@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from "react";
 import PropTypes from 'prop-types';
 
-class ListItem extends Component {
+class CharacterCard extends Component {
   render() {
       const {name, image, house, ancestry} =this.props
     return (
@@ -14,11 +14,11 @@ class ListItem extends Component {
     );
   }
 }
-ListItem.PropTypes={
+CharacterCard.PropTypes={
     name: PropTypes.string.isRequired,
     image:PropTypes.string.isRequired,
     house:PropTypes.string.isRequired,
     ancestry:PropTypes.string.isRequired
 }
 
-export default ListItem;
+export default CharacterCard;
