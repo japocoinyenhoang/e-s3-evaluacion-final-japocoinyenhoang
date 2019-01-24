@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {fetchApi} from './services/CharacterService';
+import Filter from './components/Filter';
 import './App.css';
+import CharacterList from './components/CharacterList';
+import CharacterDetails from './components/CharacterDetails';
 
 class App extends Component {
   constructor(props){
@@ -48,8 +51,6 @@ class App extends Component {
       const newData=data.map((item, index)=>{
         return {...item, id:index};
       });
-      console.log(newData);
-
       this.setState({
         characters: newData
       })
@@ -59,28 +60,17 @@ class App extends Component {
   }
   render() {
     const filteredCharacters=this.searchFilter();
+    const {characters}=this.state;
     return (
       <div className="app">
        <header className="app__header">
           <h1 className="app__title">Harry Potter Characters</h1>
-          <div className="app__search">
-            <input type="text" className= "app__search--input" onKeyUp={this.handleSearch} placeholder="Search your favorito Harry Potter Character"></input>
-          </div>
+          <Filter action={this.handleSearch} />
         </header>
-      <ul className="app__list">
-        {filteredCharacters.map(item=>{
-          console.log(item)
-          return(
-            <li className="app__list__character" id={item.id} key={item.id}>
-              <h2 className="character__name">{item.name}</h2>
-              <img src={item.image} alt ={item.name}/>
-              <p className="character__house">{`House : ${item.house}`}</p>
-              <p className="character__ancestry">{`Ancestry : ${item.ancestry}`}</p>
-            </li>
-          );
-        })}
-      </ul>
-       ;P
+        <main className="app__main">
+        <CharacterDetails details={characters} characterId={2}/>
+        <CharacterList filteredCharacters={filteredCharacters} />
+       </main>
       </div>
     );
   }
