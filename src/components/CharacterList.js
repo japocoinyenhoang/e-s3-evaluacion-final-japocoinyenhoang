@@ -12,7 +12,7 @@ class CharacterList extends Component {
         {filteredCharacters.map(item=>{
           return(
             <li className="app__list__character" id={item.id} key={item.id}>
-            <Link to={`character/${item.id}`} className="link link__details">
+            <Link to={`details/${item.id}`} className="link link__details">
               <CharacterCard 
                 id={item.id} 
                 name={item.name}
