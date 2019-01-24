@@ -17,7 +17,7 @@ class App extends Component {
     this.handleSearch=this.handleSearch.bind(this);
   }
   componentWillMount(){
-    this.getApiCharacters();
+    this.getSavedCharacters();
   }
 
 
@@ -28,6 +28,7 @@ class App extends Component {
     })
   }
 
+ 
   searchFilter(){
    const searchFiltered= this.state.characters.filter(item=>{
      const characterName=item.name;
@@ -52,12 +53,27 @@ class App extends Component {
       const newData=data.map((item, index)=>{
         return {...item, id:index};
       });
+      this.saveCharacters(newData);
       this.setState({
         characters: newData
       })
 
     })
     
+  }
+  saveCharacters(data){
+    localStorage.setItem('Howards',JSON.stringify(data));
+  }
+
+  getSavedCharacters (){
+    if (localStorage.getItem('Howards')!== null){
+    const savedCharacters=JSON.parse(localStorage.getItem('Howards'));
+    this.setState({
+      characters: savedCharacters
+    });
+  } else{
+    this.getApiCharacters();
+  }
   }
   render() {
     const filteredCharacters=this.searchFilter();

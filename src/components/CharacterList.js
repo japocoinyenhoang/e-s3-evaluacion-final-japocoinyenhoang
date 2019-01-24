@@ -10,7 +10,6 @@ class CharacterList extends Component {
     return (
         <ul className="app__list">
         {filteredCharacters.map(item=>{
-          console.log(item)
           return(
             <li className="app__list__character" id={item.id} key={item.id}>
             <Link to={`character/${item.id}`} className="link link__details">
