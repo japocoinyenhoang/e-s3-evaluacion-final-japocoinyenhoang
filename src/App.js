@@ -30,16 +30,8 @@ class App extends Component {
 
  
   searchFilter(){
-   const searchFiltered= this.state.characters.filter(item=>{
-     const characterName=item.name;
-     console.log(characterName);
-     if (characterName.toUpperCase().includes(this.state.query.toUpperCase())){
-        return true;
-     }else{ 
-       return false;
-       }
-     });
-     return searchFiltered;
+    const {characters, query} =this.state;
+   return characters.filter(item=>item.name.toUpperCase().includes(query.toUpperCase()));
 }
 
    
