@@ -6,19 +6,39 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      characters: []
+      characters: this.saveCharacters()
+
     }
-
-
   }
   componentDidMount(){
-    this.getCharacters();
+    this.getLocalStorageCharacter();
   }
-  getCharacters(){
+  saveCharacters(data){
+    localStorage.setItem('savedCharacters', JSON.stringify(data));
+  }
+
+  getLocalStorageCharacter(){
+      if (localStorage.getItem('savedCharacters') !== null) {
+      const mySavedCharacters = JSON.parse(localStorage.getItem('savedCharacters'));
+      this.setState({
+        characters:mySavedCharacters  
+      });
+    }else{
+         this.getApiCharacters();
+    }
+  }
+
+   getAPICharacters(){
     fetchApi()
     .then(data=>{
-      console.log (data)
+      const newData=data.characters.map((item, index)=>{
+        return {...item, id:index};
+      });
+      this.setState({
+        characters: newData
+      })
     })
+    
   }
   render() {
     return (
