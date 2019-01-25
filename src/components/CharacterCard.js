@@ -3,13 +3,18 @@ import PropTypes from 'prop-types';
 
 class CharacterCard extends Component {
   render() {
-      const {name, image, house, ancestry} =this.props
+        const {name, image, house, ancestry} =this.props
+        if(house=== null){return house='no data found';}
+        
     return (
         <Fragment>
-              <h2 className="character__name">{name}</h2>
-              <img src={image} alt ={name}/>
-              <p className="character__house">{`House : ${house}`}</p>
-              <p className="character__ancestry">{`Ancestry : ${ancestry}`}</p>
+                <img className="character__pic" src={image} alt ={name}/>
+                <h2 className="character__name">{name}</h2>
+                <div className="character__info">
+                    <p className="character__house">{`House:  ${house}`}</p>
+                    <p className="character__ancestry">{`Ancestry:  ${ancestry}`}</p>
+                </div>
+            
         </Fragment>    
     );
   }
