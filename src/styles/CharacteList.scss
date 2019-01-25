@@ -1,13 +1,18 @@
 
+.app__main{
+    background-image: url('./../images/HPmain.jpg');
+    width:100vw;
+    background-position: center;
+    background-size: cover;
+}
 .app__list{
-    background-color: pink;
+    margin: 20px 10%;
     padding: 0;
-    // margin: 20px;
     align-items: center;
     color:black;
     @media all and (min-width: 768px){
       display: grid;
-      // grid-column-gap: 20px ;
+      grid-column-gap: 20px ;
       grid-template-columns: 1fr 1fr 1fr;
     }
     @media all and (min-width: 1024px){
@@ -16,9 +21,10 @@
 }
   
 .app__list__character{
-    background-color: aqua;
+    background-color: rgb(107, 10, 10);
+    border-radius: 5px;
+    box-shadow:  0 10px 10px grey;
     width: 180px;
-    height: 360px;
     list-style: none;
     text-align: center;
     margin-bottom: 15px;

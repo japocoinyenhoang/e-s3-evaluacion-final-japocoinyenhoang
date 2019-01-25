@@ -32,10 +32,10 @@ class CharacterDetails extends Component {
 
     return (
         <Fragment>
-            <div className="character__details">
+            <div className="character__details__details">
                 <img className="character__details--img" src={selectedCharacter.image} alt ={selectedCharacter.name}/>
                 <div className="character__details--info">
-                    <h2 className="character__name">{selectedCharacter.name}</h2>
+                    <h2 className="character__name__details">{selectedCharacter.name}</h2>
                     <p className="character__house">{`House: ${noHouse}`}</p>
                     <p className="character character__ancestry">{`Ancestry: ${noAncestry}`}</p>
                     <p className="character__patronus">{`Patronus: ${noPatronus}`}</p>

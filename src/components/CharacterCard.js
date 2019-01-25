@@ -11,8 +11,8 @@ class CharacterCard extends Component {
         return (
             <Fragment>
                 <img className="character__pic" src={image} alt ={name}/>
-                <h2 className="character__name">{name}</h2>
                 <div className="character__info">
+                    <h2 className="character__name">{name}</h2>
                     <p className="character character__house">{`House: ${ noHouse}`}</p>
                     <p className="character character__ancestry">{`Ancestry:  ${noAncestry}`}</p>
                 </div>
