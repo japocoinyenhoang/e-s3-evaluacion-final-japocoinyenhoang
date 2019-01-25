@@ -3,23 +3,24 @@ import PropTypes from 'prop-types';
 
 class CharacterCard extends Component {
   render() {
-        const {name, image, house, ancestry} =this.props
-        if(house=== null){return house='no data found';}
-        
+        const {name, image, house, ancestry} =this.props;
+        const noHouse = (house !== '') ? house:'No house Found';
+        const noAncestry=(ancestry !== '') ? house: 'No ancestry Found';
+
     return (
         <Fragment>
                 <img className="character__pic" src={image} alt ={name}/>
                 <h2 className="character__name">{name}</h2>
                 <div className="character__info">
-                    <p className="character__house">{`House:  ${house}`}</p>
-                    <p className="character__ancestry">{`Ancestry:  ${ancestry}`}</p>
+                    <p className="character__house">{`House: ${ noHouse}`}</p>
+                    <p className="character__ancestry">{`Ancestry:  ${noAncestry}`}</p>
                 </div>
             
         </Fragment>    
     );
   }
 }
-CharacterCard.PropTypes={
+CharacterCard.propTypes={
     name: PropTypes.string.isRequired,
     image:PropTypes.string.isRequired,
     house:PropTypes.string.isRequired,

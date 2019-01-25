@@ -30,7 +30,7 @@ class CharacterList extends Component {
     );
   }
 }
-CharacterList.PropTypes={
+CharacterList.propTypes={
     filteredCharacters: PropTypes.arrayOf(PropTypes.object)
 }
 

@@ -11,7 +11,7 @@ class Filter extends Component {
     );
   }
 }
-Filter.PropTypes={
+Filter.propTypes={
     action: PropTypes.func.isRequired
 }
 export default Filter;

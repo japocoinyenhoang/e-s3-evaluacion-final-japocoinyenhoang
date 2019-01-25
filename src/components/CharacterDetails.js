@@ -25,7 +25,7 @@ class CharacterDetails extends Component {
     );}
   }
 }
-CharacterDetails.PropTypes={
+CharacterDetails.propTypes={
     selectedCharacter: PropTypes.arrayOf(PropTypes.object),
     match: PropTypes.object
 }

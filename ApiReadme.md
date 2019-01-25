@@ -16,5 +16,23 @@
         "actor":"Daniel Radcliffe",
         "alive":true,
         "image":"http://hp-api.herokuapp.com/images/harry.jpg"
+    }, 
+
+    {"name":"Mrs Norris",
+    "species":"cat",
+    "gender":"female",
+    "house":"",
+    "dateOfBirth":"",
+    "yearOfBirth":"",
+    "ancestry":"",
+    "eyeColour":"yellow",
+    "hairColour":"brown",
+    "wand":{"wood":"","core":"","length":""},
+    "patronus":"",
+    "hogwartsStudent":false,
+    "hogwartsStaff":true,
+    "actor":"Maxime, Alanis and Tommy the cats",
+    "alive":true,
+    "image":"http://hp-api.herokuapp.com/images/norris.JPG"
     }
 ]
