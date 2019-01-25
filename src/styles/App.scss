@@ -1,0 +1,19 @@
+.app{
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+  
+  }
+  .app__header{
+    background-color: greenyellow;
+    width: 100%;
+    text-align: center;
+  
+  }
+  .app__title{
+    background-color:blue;
+    text-align: center;
+  }
+  

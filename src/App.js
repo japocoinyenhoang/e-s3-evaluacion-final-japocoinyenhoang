@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 import Filter from './components/Filter';
 import CharacterList from './components/CharacterList';
 import CharacterDetails from './components/CharacterDetails';
-import './App.scss';
+import './styles/App.scss';
 
 class App extends Component {
   constructor(props){

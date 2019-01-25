@@ -1,0 +1,42 @@
+.character__details{
+    display: grid;
+    grid-template-columns: 240px 300px;
+    background-color: black;
+    padding: 20px;
+  }
+
+.character__details--img{
+    width: 200px;
+    height: 300px;
+  }
+  
+.character__alive--container{
+    margin:0;
+    display: flex;
+    // grid-template-columns: 30px auto;
+    background-color: purple;
+  }
+
+.character__alive{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap:10px;
+    background-color: red;
+  }
+  
+.noalive{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  
+.character__alive--result{
+    margin: 0;
+    background-color: yellow;
+  }
+  
+.icon{
+    background-color: green;
+    width: 25px;
+  }
+  

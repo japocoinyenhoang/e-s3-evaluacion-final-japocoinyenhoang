@@ -1,0 +1,31 @@
+
+.app__list{
+    background-color: pink;
+    padding: 0;
+    // margin: 20px;
+    align-items: center;
+    color:black;
+    @media all and (min-width: 768px){
+      display: grid;
+      // grid-column-gap: 20px ;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media all and (min-width: 1024px){
+      grid-template-columns: repeat(5, 200px);
+    }
+}
+  
+.app__list__character{
+    background-color: aqua;
+    width: 180px;
+    height: 360px;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.link{  
+    text-decoration: none;
+    color: black;
+}
+.link__details{}

@@ -2,13 +2,14 @@ import React, {Component} from "react";
 import{Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CharacterCard from './CharacterCard';
+import './../styles/CharacteList.scss';
 
 
 class CharacterList extends Component {
   render() {
       const {filteredCharacters}= this.props
     return (
-        <ul className="app__list">
+      <ul className="app__list">
         {filteredCharacters.map(item=>{
           return(
             <li className="app__list__character" id={item.id} key={item.id}>
@@ -22,11 +23,9 @@ class CharacterList extends Component {
                 />
             </Link>
             </li>
-            
           );
         })}
       </ul>
-
     );
   }
 }
