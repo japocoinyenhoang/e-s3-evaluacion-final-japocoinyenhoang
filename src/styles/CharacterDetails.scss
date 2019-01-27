@@ -1,18 +1,18 @@
 .character__details__details{
     background-color: orange;
     max-width: 60%;
-    transform: translate(25%, 10%);
-    margin-bottom: 50px;
-
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
     display: grid;
     grid-template-columns: 240px 300px;
-    padding: 20px;
   }
   .character__details--info{
     font-size: 20px;
   }
 
 .character__details--img{
+  border-radius: 50%;
     width: 200px;
     height: 300px;
   }
