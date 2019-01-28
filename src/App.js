@@ -32,7 +32,7 @@ class App extends Component {
   }
 
  
-  searchFilter(){
+  searchCharacter(){
     const {characters, query} =this.state;
     return characters.filter(item=>item.name.toUpperCase().includes(query.toUpperCase()));
   }
@@ -83,7 +83,7 @@ class App extends Component {
         
         <main className="app__main">
         <Switch>
-              <Route exact path="/" render={()=><CharacterList filteredCharacters={this.searchFilter()} />} />
+              <Route exact path="/" render={()=><CharacterList filteredCharacters={this.searchCharacter()} />} />
               <Route path="/details/:id" render={props=><CharacterDetails  match={props.match} details={this.state.characters} characterId={2}/>} />
         </Switch>
        </main>
